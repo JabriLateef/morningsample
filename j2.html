@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .portfolio-container {
+            width: 400px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab button {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 16px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+            border-radius: 4px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile-header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .text-content {
+            margin-top: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <div class="tab">
+            <button onclick="showContent('tab1')">Tab 1</button>
+            <button onclick="showContent('tab2')">Tab 2</button>
+        </div>
+        <div class="content" id="tab-content">
+            <p>Select a tab to view content.</p>
+        </div>
+    </div>
+
+    <script>
+        function showContent(tab) {
+            const content = document.getElementById('tab-content');
+            if (tab === 'tab1') {
+                content.innerHTML = `
+                    <div class="profile-container">
+                        <div class="profile-image"></div>
+                        <div class="profile-header">Jabri Lateef</div>
+                    </div>
+                    <div>
+                        <div class="section-title">About Me</div>
+                        <p class="text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at dui urna. Fusce at aliquam mauris, in suscipit nisi.</p>
+                    </div>
+                    <div>
+                        <div class="section-title">My Ambitions</div>
+                        <p class="text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula dui et fermentum posuere.</p>
+                    </div>
+                `;
+            } else if (tab === 'tab2') {
+                content.innerHTML = '<p>Content for Tab 2</p>';
+            }
+        }
+    </script>
+</body>
+</html>
